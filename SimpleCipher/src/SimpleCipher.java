@@ -72,8 +72,8 @@ public class SimpleCipher {
         String cipherText = input.nextLine();
 
         for( int i = 0; i < cipherText.length(); i++ ) {
-            int temp = cipherText.charAt( i ) + 'a' - shift;
-            plainText += String.valueOf( temp );
+            int temp = cipherText.charAt( i ) - shift;
+            plainText += (char) temp;
         }
         System.out.println( plainText );
     }
