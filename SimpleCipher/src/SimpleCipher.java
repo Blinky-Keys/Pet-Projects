@@ -6,20 +6,17 @@
  * of your choice.
  */
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class SimpleCipher {
 
     private static Scanner input = new Scanner( System.in );
     private static int shift;
-    private static ArrayList alphabet = new ArrayList<>();
 
     /**
      * @param args the command line arguments
      */
     public static void main( String[] args ) {
     	
-    	init();
 
         while( true ) {
             System.out.println( "Which operation would you like to perform?" );
@@ -56,8 +53,8 @@ public class SimpleCipher {
         plainText = input.nextLine();
 
         for( int i = 0; i < plainText.length(); i++ ) {
-            int temp = (plainText.charAt( i )) - 'a' + shift;
-            cipherText += alphabet.get( Integer.parseInt( String.valueOf( temp ) ) );
+            int temp = (plainText.charAt( i )) + shift;
+            cipherText += (char) temp;
         }
         System.out.println( cipherText );
     }
@@ -76,12 +73,5 @@ public class SimpleCipher {
             plainText += (char) temp;
         }
         System.out.println( plainText );
-    }
-
-    private static void init() {
-        String[] temp = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-        for( int i = 0; i < temp.length; i++ ) {
-            alphabet.add( temp[i] );
-        }
     }
 }
