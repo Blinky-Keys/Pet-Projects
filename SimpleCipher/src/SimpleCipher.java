@@ -1,5 +1,3 @@
-package simplecipher;
-
 /**
  *
  * @author Nathan Ellison
@@ -20,8 +18,8 @@ public class SimpleCipher {
      * @param args the command line arguments
      */
     public static void main( String[] args ) {
-        // TODO code application logic here
-        init();
+    	
+    	init();
 
         while( true ) {
             System.out.println( "Which operation would you like to perform?" );
@@ -74,8 +72,8 @@ public class SimpleCipher {
         String cipherText = input.nextLine();
 
         for( int i = 0; i < cipherText.length(); i++ ) {
-            int temp = cipherText.charAt( i );
-            plainText += String.valueOf( temp ) + shift + " ";
+            int temp = cipherText.charAt( i ) + 'a' - shift;
+            plainText += String.valueOf( temp );
         }
         System.out.println( plainText );
     }
